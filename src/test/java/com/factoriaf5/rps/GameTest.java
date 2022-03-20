@@ -1,63 +1,43 @@
 package com.factoriaf5.rps;
 
 import static org.junit.Assert.assertEquals;
-import com.factoriaf5.rps.domain.infrastructure.Game;
-import com.factoriaf5.rps.domain.models.Paper;
-import com.factoriaf5.rps.domain.models.Rock;
-import com.factoriaf5.rps.domain.models.Scissor;
+
+import com.factoriaf5.rps.app.Game;
 
 import org.junit.Test;
 
 public class GameTest {
     @Test
-    public void test_game_rock_scissor(){
+    public void test_game_player_2_wins(){
         //Given
         Game game = new Game();
-        Rock rock = new Rock();
-        Scissor scissor = new Scissor();
-        String expected = "Player 1 wins!";
-        //When
-        String winner = game.startGame(rock.name, scissor.name);
-        //Then
-        assertEquals( expected, winner );
-    }
-
-    @Test
-    public void test_game_draw_rocks(){
-        //Given
-        Game game = new Game();
-        Rock rock = new Rock();
-        Rock rock2 = new Rock();
-        String expected = "Draw!";
-        //When
-        String winner = game.startGame(rock.name,rock2.name);
-        //Then
-        assertEquals( expected, winner );
-    }
-
-    @Test
-    public void test_game_paper_rock(){
-        //Given
-        Game game = new Game();
-        Paper paper = new Paper();
-        Rock rock = new Rock();
-        String expected = "Player 1 wins!";
-        //When
-        String winner = game.startGame(paper.name,rock.name);
-        //Then
-        assertEquals( expected, winner );
-    }
-
-    @Test
-    public void test_game_paper_scissor(){
-        //Given
-        Game game = new Game();
-        Paper paper = new Paper();
-        Scissor scissor = new Scissor();
         String expected = "Player 2 wins!";
         //When
-        String winner = game.startGame(paper.name,scissor.name);
+        String result = game.startGame("p", "s");
         //Then
-        assertEquals( expected, winner );
+        assertEquals(expected, result);
     }
+
+    @Test
+    public void test_game_player_1_wins(){
+        //Given
+        Game game = new Game();
+        String expected = "Player 1 wins!";
+        //When
+        String result = game.startGame("r", "s");
+        //Then
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void test_game_draw(){
+        //Given
+        Game game = new Game();
+        String expected = "Draw!";
+        //When
+        String result = game.startGame("p", "p");
+        //Then
+        assertEquals(expected, result);
+    }
+
 }

@@ -1,6 +1,4 @@
-package com.factoriaf5.rps.domain.infrastructure;
-
-import javax.swing.Action;
+package com.factoriaf5.rps.app;
 
 import com.factoriaf5.rps.domain.models.ActionFactory;
 
@@ -10,13 +8,11 @@ public class Game {
 
         ActionFactory actionFactory = new ActionFactory();
 
-        Action actionPlayer1 = (Action) actionFactory.getAction(playerOneAction);
-        String action1 = actionPlayer1.getName();
+        String actionPlayer1 = actionFactory.getAction(playerOneAction).getAction();
 
-        Action actionPlayer2 = (Action) actionFactory.getAction(playerTwoAction);
-        String action2 = actionPlayer1.getName();
+        String actionPlayer2 = actionFactory.getAction(playerTwoAction).getAction();
 
-        String winner = checkWinner(action1, action2);
+        String winner = checkWinner(actionPlayer1, actionPlayer2);
 
         return winner;
     }

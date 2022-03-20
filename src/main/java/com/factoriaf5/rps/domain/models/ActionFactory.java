@@ -1,14 +1,16 @@
 package com.factoriaf5.rps.domain.models;
 
+import com.factoriaf5.rps.domain.contracts.InterfaceAction;
+
 public class ActionFactory {
 
-    public Action getAction(String type) {
+    public InterfaceAction getAction(String actionType) {
 
-        if (type.equalsIgnoreCase("r")) {
+        if (actionType.equals("r")) {
             return new Rock();
-        } else if (type.equalsIgnoreCase("p")) {
+        } else if (actionType.equals("p")) {
             return new Paper();
-        } else if (type.equalsIgnoreCase("s")) {
+        } else if (actionType.equals("s")) {
             return new Scissor();
         }
         return null;

@@ -1,4 +1,4 @@
-package com.factoriaf5.rps.app;
+package com.factoriaf5.rps.domain.infrastructure;
 
 public class App 
 {
