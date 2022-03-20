@@ -3,7 +3,7 @@ package com.factoriaf5.rps.models;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import com.factoriaf5.rps.domain.Rock;
+import com.factoriaf5.rps.domain.models.Rock;
 
 import org.junit.Test;
 
@@ -13,7 +13,7 @@ public class RockTest {
     public void test_get_rock(){
         //Given
         Rock rock = new Rock();
-        String expected = "rock";
+        String expected = "r";
         //When
         rock.getName();
         //Then
@@ -24,7 +24,7 @@ public class RockTest {
     public void test_not_rock(){
         //Given
         Rock rock = new Rock();
-        String expected = "paper";
+        String expected = "p";
         //When
         rock.getName();
         //Then

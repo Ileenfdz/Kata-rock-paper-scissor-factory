@@ -1,4 +1,4 @@
-package com.factoriaf5.rps;
+package com.factoriaf5.rps.app;
 
 public class App 
 {

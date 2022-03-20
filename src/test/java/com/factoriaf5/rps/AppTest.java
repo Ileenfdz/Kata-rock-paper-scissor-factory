@@ -18,14 +18,4 @@ public class AppTest
         assertTrue( true );
     }
 
-//     @Test
-//     public void test_if_one_player_could_have_rock(){
-//         //Given
-//         Game game = new game();
-//         String resultExpected = "paper";
-//         //When
-//         player1->getRock(player1->action);
-//         //Then
-//         this.assertTrue(resultExpected,  player1->action);
-//     }
 }
